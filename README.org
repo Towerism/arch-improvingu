@@ -1,0 +1,40 @@
+* Arch Linux
+ImprovingU for learning Arch Linux. From installation to maintenance.
+* Installation Steps
+1. Install Virtualbox
+2. Download Arch Linux ISO
+3. Configure a virtual machine through Virtualbox for Arch Linux
+   1. I would use at least 2GB RAM and at least 32 GB of storage. You may want more.
+   2. Ensure EFI boot is enabled
+4. Boot up the virtual machine and when it asks select the Arch Linux ISO as the
+   boot disk
+5. Follow the instructions on the Arch website for installing Arch Linux using
+   the ISO
+   1. When it comes to installing a bootloader follow the UEFI instructions for
+      installing GRUB
+6. Turn off the virtual machine
+7. Remove the Arch Linux ISO from the virtual optical drive
+8. Start the virtual machine
+9. Log in with username ~root~, password is whatever you set during the
+   installation steps
+
+* Installation notes
+- Use gdisk for partitioning
+  - Need a EFI partition
+    - 400MB is a good size
+    - use partition code ~ef00~
+    - format with ~mkfs.fat -F32 /dev/sda1~
+  - a swap partition
+    - use partition code ~8200~
+  - and a Linux filesystem partition
+    - use partition code ~8300~
+- Get mirrors
+  - ~curl https://www.archlinux.org/mirrorlist/?country=US&protocol=http&protocol=https&ip_version=4 | sed 's/^.//' > /etc/pacman.d/mirrorlist~
+- Timezone
+  - ~ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime~
+- Set hostname (arch-improvingu can be replaced with whatever you want, it's a good idea
+  to make it alpha-numeric)
+  - ~echo arch-improvinu > /etc/hostname~
+- Grub install: use option ~--removable~ in order for Virtualbox to recognize
+  the boot executable
+
