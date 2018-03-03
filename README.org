@@ -19,22 +19,23 @@ ImprovingU for learning Arch Linux. From installation to maintenance.
    installation steps
 
 * Installation notes
-- Use gdisk for partitioning
-  - Need a EFI partition
-    - 400MB is a good size
-    - use partition code ~ef00~
-    - format with ~mkfs.fat -F32 /dev/sda1~
-  - a swap partition
-    - use partition code ~8200~
-  - and a Linux filesystem partition
-    - use partition code ~8300~
-- Get mirrors
-  - ~curl https://www.archlinux.org/mirrorlist/?country=US&protocol=http&protocol=https&ip_version=4 | sed 's/^.//' > /etc/pacman.d/mirrorlist~
-- Timezone
-  - ~ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime~
-- Set hostname (arch-improvingu can be replaced with whatever you want, it's a good idea
-  to make it alpha-numeric)
-  - ~echo arch-improvinu > /etc/hostname~
-- Grub install: use option ~--removable~ in order for Virtualbox to recognize
-  the boot executable
+** Use gdisk for partitioning
+- Need a EFI partition
+  - 400MB is a good size
+  - use partition code ~ef00~
+  - format with ~mkfs.fat -F32 /dev/sda1~
+- a swap partition
+  - use partition code ~8200~
+- and a Linux filesystem partition
+  - use partition code ~8300~
+** Get mirrors
+- ~curl https://www.archlinux.org/mirrorlist/?country=US&protocol=http&protocol=https&ip_version=4 | sed 's/^.//' > /etc/pacman.d/mirrorlist~
+** Timezone
+- ~ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime~
+** Set hostname 
+- ~echo arch-improvinu > /etc/hostname~
+- ~arch-improvingu~ can be replaced with whatever you want, it's a good idea to
+  make it alpha-numeric
+** Grub install
+use option ~--removable~ in order for Virtualbox to recognize the boot executable
 
