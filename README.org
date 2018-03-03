@@ -10,7 +10,7 @@ ImprovingU for learning Arch Linux. From installation to maintenance.
    boot disk
 5. Follow the [[https://wiki.archlinux.org/index.php/installation_guide][instructions]] on the Arch website for installing Arch Linux using
    the ISO
-   1. When it comes to installing a bootloader follow the UEFI instructions for
+   1. When it comes to installing a bootloader follow the [[https://wiki.archlinux.org/index.php/GRUB#UEFI_systems][UEFI instructions]] for
       installing GRUB
 6. Turn off the virtual machine
 7. Remove the Arch Linux ISO from the virtual optical drive
