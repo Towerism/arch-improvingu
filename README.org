@@ -17,8 +17,6 @@ ImprovingU for learning Arch Linux. From installation to maintenance.
 8. Start the virtual machine
 9. Log in with username ~root~, password is whatever you set during the
    installation steps
-10. Install ~linux-headers~
-11. Install ~virtual-box-guest-utils~
 
 * System Setup
 ** Enable networking
@@ -28,6 +26,12 @@ commands, the service will startup automatically on boot.
 #+BEGIN_SRC sh
 $ systemctl enable dhcpcd.service
 $ systemctl start dhcpcd.service
+#+END_SRC
+
+** Install virtual box guest utilities
+When installing, ensure that you choose the arch option rather than the dkms option.
+#+BEGIN_SRC sh
+$ pacman -S linux-headers virtual-box-guest-utils
 #+END_SRC
 
 * Installation notes
