@@ -46,5 +46,4 @@ $ pacman -S grub efibootmgr
 $ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch --removable
 $ grub-mkconfig -o /boot/grub/grub.cfg
 #+END_SRC
-use option ~--removable~ in order for Virtualbox to recognize the boot executable
 
