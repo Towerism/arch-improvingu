@@ -3,6 +3,8 @@
 ImprovingU for learning Arch Linux. From installation to maintenance.
 #+END_QUOTE
 * Installation Steps
+Refer to the installation notes below while following the arch linux
+installation guide.
 1. Install Virtualbox
 2. Download Arch Linux ISO
 3. Configure a virtual machine through Virtualbox for Arch Linux
@@ -24,6 +26,31 @@ ImprovingU for learning Arch Linux. From installation to maintenance.
 9. Log in with username ~root~, password is whatever you set during the
    installation steps
 
+** Installation notes
+*** Use gdisk for partitioning
+- Need a EFI partition
+  - 400MB is a good size
+  - use partition code ~ef00~
+  - format with ~mkfs.fat -F32 /dev/sda2~
+- a swap partition
+  - use partition code ~8200~
+- and a Linux filesystem partition
+  - use partition code ~8300~
+*** Get mirrors
+ - ~curl "https://www.archlinux.org/mirrorlist/?country=US&protocol=http&protocol=https&ip_version=4" | sed 's/^.//' > /etc/pacman.d/mirrorlist~
+*** Timezone
+ - ~ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime~
+*** Set hostname 
+ - ~echo arch-improvinu > /etc/hostname~
+ - ~arch-improvingu~ can be replaced with whatever you want, it's a good idea to
+   make it alpha-numeric
+*** Grub install
+ #+BEGIN_SRC sh
+ $ pacman -S grub efibootmgr
+ $ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch --removable
+ $ grub-mkconfig -o /boot/grub/grub.cfg
+ #+END_SRC
+
 * System Setup
 ** Enable networking
 Networking was enabled in the installation media by default. This must be set up
@@ -40,28 +67,24 @@ When installing, ensure that you choose the arch option rather than the dkms opt
 $ pacman -S linux-headers virtual-box-guest-utils
 #+END_SRC
 
-* Installation notes
-** Use gdisk for partitioning
-- Need a EFI partition
-  - 400MB is a good size
-  - use partition code ~ef00~
-  - format with ~mkfs.fat -F32 /dev/sda2~
-- a swap partition
-  - use partition code ~8200~
-- and a Linux filesystem partition
-  - use partition code ~8300~
-** Get mirrors
-- ~curl "https://www.archlinux.org/mirrorlist/?country=US&protocol=http&protocol=https&ip_version=4" | sed 's/^.//' > /etc/pacman.d/mirrorlist~
-** Timezone
-- ~ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime~
-** Set hostname 
-- ~echo arch-improvinu > /etc/hostname~
-- ~arch-improvingu~ can be replaced with whatever you want, it's a good idea to
-  make it alpha-numeric
-** Grub install
+** Set up a non-root user
 #+BEGIN_SRC sh
-$ pacman -S grub efibootmgr
-$ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch --removable
-$ grub-mkconfig -o /boot/grub/grub.cfg
+$ pacman -S sudo
+$ useradd -m -g users -G wheel -s /bin/bash USERNAME
+$ passwd USERNAME
+#+END_SRC
+
+** Install a desktop environment
+Most people, when installing a desktop environment, also choose to install a
+login manager.
+#+BEGIN_SRC sh
+$ sudo pacman -S gnome
+$ sudo systemctl enable gdm.service
+$ sudo systemctl start gdm.service
+#+END_SRC
+
+** Install a browser
+#+BEGIN_SRC sh
+$ sudo pacman -S chromium
 #+END_SRC
 
