@@ -41,5 +41,10 @@ ImprovingU for learning Arch Linux. From installation to maintenance.
 - ~arch-improvingu~ can be replaced with whatever you want, it's a good idea to
   make it alpha-numeric
 ** Grub install
+#+BEGIN_SRC sh
+# pacman -S grub efibootmgr
+# grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch --removable
+# grub-mkconfig -o /boot/grub/grub.cfg
+#+END_SRC
 use option ~--removable~ in order for Virtualbox to recognize the boot executable
 
