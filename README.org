@@ -17,13 +17,17 @@ ImprovingU for learning Arch Linux. From installation to maintenance.
 8. Start the virtual machine
 9. Log in with username ~root~, password is whatever you set during the
    installation steps
+10. Install ~linux-headers~
+11. Install ~virtual-box-guest-utils~
+
+* System Setup
 
 * Installation notes
 ** Use gdisk for partitioning
 - Need a EFI partition
   - 400MB is a good size
   - use partition code ~ef00~
-  - format with ~mkfs.fat -F32 /dev/sda1~
+  - format with ~mkfs.fat -F32 /dev/sda2~
 - a swap partition
   - use partition code ~8200~
 - and a Linux filesystem partition
