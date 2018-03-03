@@ -8,7 +8,7 @@ ImprovingU for learning Arch Linux. From installation to maintenance.
    2. Ensure EFI boot is enabled
 4. Boot up the virtual machine and when it asks select the Arch Linux ISO as the
    boot disk
-5. Follow the instructions on the Arch website for installing Arch Linux using
+5. Follow the [[https://wiki.archlinux.org/index.php/installation_guide][instructions]] on the Arch website for installing Arch Linux using
    the ISO
    1. When it comes to installing a bootloader follow the UEFI instructions for
       installing GRUB
