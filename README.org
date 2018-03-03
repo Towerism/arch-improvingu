@@ -29,7 +29,7 @@ ImprovingU for learning Arch Linux. From installation to maintenance.
 - and a Linux filesystem partition
   - use partition code ~8300~
 ** Get mirrors
-- ~curl https://www.archlinux.org/mirrorlist/?country=US&protocol=http&protocol=https&ip_version=4 | sed 's/^.//' > /etc/pacman.d/mirrorlist~
+- ~curl "https://www.archlinux.org/mirrorlist/?country=US&protocol=http&protocol=https&ip_version=4" | sed 's/^.//' > /etc/pacman.d/mirrorlist~
 ** Timezone
 - ~ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime~
 ** Set hostname 
