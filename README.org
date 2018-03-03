@@ -8,6 +8,10 @@ ImprovingU for learning Arch Linux. From installation to maintenance.
 3. Configure a virtual machine through Virtualbox for Arch Linux
    1. I would use at least 2GB RAM and at least 32 GB of storage. You may want more.
    2. Ensure EFI boot is enabled
+   3. Set VRAM to 128MB
+   4. Enable 3D Hardware Acceleration
+   5. Enable more CPU cores (Ideally you would enable as many as you have
+      physical cores)
 4. Boot up the virtual machine and when it asks select the Arch Linux ISO as the
    boot disk
 5. Follow the [[https://wiki.archlinux.org/index.php/installation_guide][instructions]] on the Arch website for installing Arch Linux using
