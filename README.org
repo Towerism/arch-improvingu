@@ -21,6 +21,14 @@ ImprovingU for learning Arch Linux. From installation to maintenance.
 11. Install ~virtual-box-guest-utils~
 
 * System Setup
+** Enable networking
+Networking was enabled in the installation media by default. This must be set up
+after booting into our brand new Arch installation. After running these
+commands, the service will startup automatically on boot.
+#+BEGIN_SRC sh
+$ systemctl enable dhcpcd.service
+$ systemctl start dhcpcd.service
+#+END_SRC
 
 * Installation notes
 ** Use gdisk for partitioning
