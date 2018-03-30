@@ -76,7 +76,7 @@ $ passwd USERNAME
 
 ** Install a desktop environment
 Most people, when installing a desktop environment, also choose to install a
-login manager.
+login manager. The gnome group includes both and more (Settings manager, "standard" desktop apps, audio server, etc.)
 #+BEGIN_SRC sh
 $ sudo pacman -S gnome
 #+END_SRC
@@ -94,3 +94,5 @@ $ sudo systemctl start gdm.service
 $ sudo pacman -S chromium
 #+END_SRC
 
+* Troubleshooting
+If you find the terminal won't start while running Gnome, you may need to set the language and locale.
