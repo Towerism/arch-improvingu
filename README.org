@@ -79,9 +79,16 @@ Most people, when installing a desktop environment, also choose to install a
 login manager.
 #+BEGIN_SRC sh
 $ sudo pacman -S gnome
+#+END_SRC
+
+Disable wayland by uncommenting the line to disable it in `/etc/gdm/custom.conf`
+
+#+BEGIN_SRC sh
+$ sudo pacman -S xf86-video-fbdev
 $ sudo systemctl enable gdm.service
 $ sudo systemctl start gdm.service
-#+END_SRC
+
+
 
 ** Install a browser
 #+BEGIN_SRC sh
