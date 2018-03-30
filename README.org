@@ -87,8 +87,7 @@ Disable wayland by uncommenting the line to disable it in `/etc/gdm/custom.conf`
 $ sudo pacman -S xf86-video-fbdev
 $ sudo systemctl enable gdm.service
 $ sudo systemctl start gdm.service
-
-
+#+END_SRC
 
 ** Install a browser
 #+BEGIN_SRC sh
