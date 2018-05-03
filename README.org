@@ -94,6 +94,14 @@ $ sudo systemctl start gdm.service
 $ sudo pacman -S chromium
 #+END_SRC
 
+** Install AUR helper
+#+BEGIN_SRC sh
+$ sudo pacman -S git base-devel
+$ git clone https://aur.archlinux.org/yay.git
+$ cd yay
+$ makepkg -si
+#+END_SRC
+
 ** Prepare Dot Net Core Dev Environment
 #+BEGIN_SRC sh
 $ yay -S visual-studio-code-bin dotnet-sdk
@@ -106,14 +114,6 @@ the dotnet program.
 #+BEGIN_SRC sh
 $ sudo dotnet new mvc
 $ dotnet run
-#+END_SRC
-
-** Install AUR helper
-#+BEGIN_SRC sh
-$ sudo pacman -S git base-devel
-$ git clone https://aur.archlinux.org/yay.git
-$ cd yay
-$ makepkg -si
 #+END_SRC
 
 * Troubleshooting
