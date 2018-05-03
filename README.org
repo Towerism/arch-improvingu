@@ -94,6 +94,20 @@ $ sudo systemctl start gdm.service
 $ sudo pacman -S chromium
 #+END_SRC
 
+** Prepare Dot Net Core Dev Environment
+#+BEGIN_SRC sh
+$ yay -S visual-studio-code-bin dotnet-sdk
+#+END_SRC
+
+Make a folder for a new project, and cd into it. The sudo below is only needed to initialize
+the nuget package cache. Once it has been initialized, sudo will seldom ever be needed for
+the dotnet program.
+
+#+BEGIN_SRC sh
+$ sudo dotnet new mvc
+$ dotnet run
+#+END_SRC
+
 ** Install AUR helper
 #+BEGIN_SRC sh
 $ sudo pacman -S git base-devel
