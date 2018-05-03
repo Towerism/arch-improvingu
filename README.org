@@ -96,7 +96,7 @@ $ sudo pacman -S chromium
 
 ** Install AUR helper
 #+BEGIN_SRC sh
-$ sudo pacman -S git
+$ sudo pacman -S git base-devel
 $ git clone https://aur.archlinux.org/yay.git
 $ cd yay
 $ makepkg -si
