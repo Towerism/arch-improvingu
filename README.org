@@ -94,5 +94,13 @@ $ sudo systemctl start gdm.service
 $ sudo pacman -S chromium
 #+END_SRC
 
+** Install AUR helper
+#+BEGIN_SRC sh
+$ sudo pacman -S git
+$ git clone https://aur.archlinux.org/yay.git
+$ cd yay
+$ makepkg -si
+#+END_SRC
+
 * Troubleshooting
 If you find the terminal won't start while running Gnome, you may need to set the language and locale.
