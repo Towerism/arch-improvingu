@@ -41,7 +41,7 @@ installation guide.
 *** Timezone
  - ~ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime~
 *** Set hostname 
- - ~echo arch-improvinu > /etc/hostname~
+ - ~echo arch-improvingu > /etc/hostname~
  - ~arch-improvingu~ can be replaced with whatever you want, it's a good idea to
    make it alpha-numeric
 *** Grub install
@@ -64,7 +64,7 @@ $ systemctl start dhcpcd.service
 ** Install virtual box guest utilities
 When installing, ensure that you choose the arch option rather than the dkms option.
 #+BEGIN_SRC sh
-$ pacman -S linux-headers virtual-box-guest-utils
+$ pacman -S linux-headers virtualbox-guest-utils
 #+END_SRC
 
 ** Set up a non-root user
